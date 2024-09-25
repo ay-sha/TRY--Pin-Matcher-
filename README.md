@@ -1,4 +1,4 @@
-﻿# TRY--Pin-Matcher-
+﻿# TRY--Pin-Matcher
 # Overview
 The PIN Matcher is a simple JS based web application that allows users to generate a random 4-digit PIN and attempt to input the correct PIN. The application provides feedback on whether the entered PIN matches the generated one. Users can also clear their input or use the backspace function to correct mistakes.
 
