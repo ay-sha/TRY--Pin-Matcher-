@@ -7,8 +7,6 @@ let backspace = document.getElementById("button-backspace");
 let clear = document.getElementById("button-clear"); 
 let givenPinInput = document.getElementById("generate-Box"); 
 let pinInput = document.getElementById("Pin-Box"); 
-let pinStr = " "; 
-let newStr = " ";
 
 window.onload = function ()
 {
@@ -24,6 +22,7 @@ function submitfunc()
     {
         console.log("Matched");
         notifyArea.style.display = "block";
+        Match.style.display = "block";
         notMatch.style.display = "none"; 
     }
     else
@@ -31,8 +30,9 @@ function submitfunc()
         console.log("Don't match");
         notifyArea.style.display = "block";
         Match.style.display = "none";
-        document.getElementById("Pin-Box").value = " ";
+        notMatch.style.display = "block";
     }
+    pinInput.value = " ";
     pin = 0; 
    
 }
@@ -40,32 +40,29 @@ function submitfunc()
 function getRndInteger(min, max) {
     console.log("Clicked");
     notifyArea.style.display = "none";
-    document.getElementById("Pin-Box").value = " ";
-    pinStr = " ";
-    newStr = " ";
+    pinInput.value = " ";
 return Math.floor(Math.random() * (max - min)) + min;
 }
 
 buttons.forEach(function(button){
-    button.addEventListener('click', function () {
-        pinStr += this.innerText; 
-        document.getElementById("Pin-Box").value = pinStr;
-        console.log(pinStr);
+    button.addEventListener('click', function () { 
+        pinInput.value += this.innerText;
+        console.log(pinInput.value);
     });
 });
 
 clear.addEventListener('click', function ()
 {
     console.log("clared");
-    document.getElementById("Pin-Box").value = " "; 
+    pinInput.value = " "; 
     notifyArea.style.display = "none";
+    notMatch.style.display = "none"
+    Match.style.display = "none";
     pinStr = " "; 
 });
 backspace.addEventListener('click', function () {
 
-    newStr = pinStr.slice(0, -1)
-    console.log(newStr);
-    pinStr = newStr; 
-    document.getElementById("Pin-Box").value = pinStr;
+    let newStr = pinInput.value.slice(0, -1)
+    pinInput.value = newStr;
     console.log(pinStr);
 });
