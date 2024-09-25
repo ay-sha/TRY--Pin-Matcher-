@@ -7,7 +7,7 @@ let backspace = document.getElementById("button-backspace");
 let clear = document.getElementById("button-clear"); 
 let givenPinInput = document.getElementById("generate-Box"); 
 let pinInput = document.getElementById("Pin-Box"); 
-let pinStr = ""; 
+let pinStr = " "; 
 let newStr = " ";
 
 window.onload = function ()
@@ -31,13 +31,19 @@ function submitfunc()
         console.log("Don't match");
         notifyArea.style.display = "block";
         Match.style.display = "none";
+        document.getElementById("Pin-Box").value = " ";
     }
+    pin = 0; 
    
 }
 
 function getRndInteger(min, max) {
     console.log("Clicked");
-  return Math.floor(Math.random() * (max - min)) + min;
+    notifyArea.style.display = "none";
+    document.getElementById("Pin-Box").value = " ";
+    pinStr = " ";
+    newStr = " ";
+return Math.floor(Math.random() * (max - min)) + min;
 }
 
 buttons.forEach(function(button){
@@ -52,6 +58,7 @@ clear.addEventListener('click', function ()
 {
     console.log("clared");
     document.getElementById("Pin-Box").value = " "; 
+    notifyArea.style.display = "none";
     pinStr = " "; 
 });
 backspace.addEventListener('click', function () {
