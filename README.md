@@ -12,4 +12,8 @@ The PIN Matcher is a simple JS based web application that allows users to genera
 1. HTML
 2. CSS
 3. Bootstrap
-4. JavaScript 
+4. JavaScript
+
+<strong>Live Link: </strong> https://ay-sha.github.io/TRY--Pin-Matcher-/
+
+![dm2](https://github.com/user-attachments/assets/99d2d036-b073-4b22-a60f-bc10c2588604)
